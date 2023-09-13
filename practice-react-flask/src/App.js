@@ -16,7 +16,7 @@ function App() {
     useEffect(() => {
         // Using fetch to fetch the api from
         // flask server it will be redirected to proxy
-        fetch("/data").then(res => {
+        fetch("http://132.249.242.169/flask/data").then(res => {
               if (!res.ok) {
               throw new Error('Network response was not ok');
               }
