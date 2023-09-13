@@ -20,7 +20,7 @@ function App() {
               if (!response.ok) {
               throw new Error('Network response was not ok');
               }
-              return response.json();
+              return res.json();
             })
             .then(data => {
                 // Setting a data from api
@@ -31,13 +31,12 @@ function App() {
                     programming: data.programming,
                 });
             })
-            .catch(error => setError(error.data));
+            .catch(error => console.log(error.data));
     }, []);
 
     return (
         <div className="App">
             <header className="App-header">
-                {error && <p>{error}</p>}
                 <h1>React and flask</h1>
                 {/* Calling a data from setdata for showing */}
                 <p>{data.name}</p>
