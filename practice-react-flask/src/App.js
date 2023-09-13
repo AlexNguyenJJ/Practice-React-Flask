@@ -17,7 +17,7 @@ function App() {
         // Using fetch to fetch the api from
         // flask server it will be redirected to proxy
         fetch("/data").then(res => {
-              if (!response.ok) {
+              if (!res.ok) {
               throw new Error('Network response was not ok');
               }
               return res.json();
