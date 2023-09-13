@@ -16,13 +16,14 @@ function App() {
     useEffect(() => {
         // Using fetch to fetch the api from
         // flask server it will be redirected to proxy
-        fetch("http://132.249.242.169/flask/data").then(res => {
+        fetch("http://132.249.242.169/flask/data/").then(res => {
               if (!res.ok) {
               throw new Error('Network response was not ok');
               }
               return res.json();
             })
             .then(data => {
+                console.log(data)
                 // Setting a data from api
                 setdata({
                     name: data.Name,
